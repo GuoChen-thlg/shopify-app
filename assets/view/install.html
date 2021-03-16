@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify App — Installation</title>
+    <!-- <script>
+        if (location.protocol !== 'https:') {
+            location.href = `https://${location.host}${location.pathname}${location.search}`
+        }
+    </script> -->
+    <style>
+        * {
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            margin-top: 150px;
+        }
+
+        p {
+            font-size: 13px;
+        }
+
+        input {
+            display: inline-block;
+            width: 560px;
+            padding: 15px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #999;
+            outline: none;
+            font-size: 18px;
+        }
+
+        input[type="text"] {
+            text-align: left;
+        }
+
+        input[type="button"] {
+            background-color: #6775d0;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .err {
+            border: 3px #f00 solid;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Shopify App — Installation</h1>
+    <p>Please enter your store domain name to log in or install this application.</p>
+    <form action="/auth/install" method="GET">
+        <input type="text" name="shop" placeholder="example.myshopify.com"><br />
+        <input type="button" value="Install" onclick="install()">
+    </form>
+    <script>
+        function install() {
+            let shop = document.querySelector('input[name="shop"]')
+            if (/[a-zA-Z0-9][a-zA-Z0-9\-]*\.myshopify\.com/.test(shop.value)) {
+                shop.value = /[a-zA-Z0-9][a-zA-Z0-9\-]*\.myshopify\.com/.exec(shop.value)[0]
+                document.querySelector('form[action][method="GET"]').submit()
+            } else {
+                document.querySelector('input[name="shop"]').setAttribute('class', 'err')
+                setTimeout(() => {
+                    document.querySelector('input[name="shop"]').setAttribute('class', '')
+                }, 3e3)
+            }
+            return false
+        }
+    </script>
+</body>
+
+</html>

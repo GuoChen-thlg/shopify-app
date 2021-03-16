@@ -1,0 +1,45 @@
+{
+  "name": "shopify-app",
+  "version": "0.1.0",
+  "description": "A template for building Shopify App",
+  "main": "dist/app.js",
+  "keywords": [
+    "koa",
+    "ts",
+    "shopify"
+  ],
+  "scripts": {
+    "dev": "concurrently npm:dev:*",
+    "build": "npx tsc",
+    "dev:watch": "tsc -w",
+    "dev:start": "nodemon node dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "thlg",
+  "license": "ISC",
+  "dependencies": {
+    "@shopify/shopify-api": "^1.1.0",
+    "dotenv": "^8.2.0",
+    "isomorphic-fetch": "^3.0.0",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "koa-jwt": "^4.0.0",
+    "koa-log4": "^2.3.2",
+    "koa-router": "^10.0.0",
+    "koa-session": "^6.1.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^7.0.0",
+    "mysql": "^2.18.1",
+    "ts-node": "^9.1.1"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.1",
+    "@types/koa-router": "^7.4.1",
+    "@types/koa-static": "^4.0.1",
+    "@types/koa-views": "^2.0.4",
+    "@types/mysql": "^2.15.18",
+    "concurrently": "^6.0.0",
+    "nodemon": "^2.0.7",
+    "typescript": "^4.2.3"
+  }
+}

@@ -1,0 +1,11 @@
+# IDE - VSCode
+.vscode/*
+
+
+
+# compiled output
+/dist
+.env
+
+# dependencies
+node_modules
